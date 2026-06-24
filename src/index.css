@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-emerald: #059669;
+    --color-gold: #f59e0b;
+    --color-navy: #0f2744;
+    --color-dark: #071729;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#071729] text-white font-body antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #071729;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #059669;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 hover:border-gold-400 text-white font-semibold rounded-full transition-all duration-300 hover:bg-white/5 hover:text-gold-400;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-900/50 border border-emerald-700/50 text-emerald-400 text-sm font-medium rounded-full mb-4;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-display font-bold text-white leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-white/60 max-w-2xl;
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 40px rgba(5, 150, 105, 0.15);
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:outline-none focus:border-emerald-500/60 focus:bg-white/10 transition-all duration-300 text-sm;
+  }
+
+  .star {
+    color: #f59e0b;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #34d399, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 40% 20%, rgba(5, 150, 105, 0.12) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(15, 39, 68, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(245, 158, 11, 0.05) 0px, transparent 50%);
+  }
+}
